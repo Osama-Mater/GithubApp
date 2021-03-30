@@ -49,7 +49,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_search_github_repos_empty_list_image"
-        tools:text="Aïe, il semblerait qu'il y ait une erreur technique" />
+        tools:text="Ouch, it looks like there is a technical error" />
 
     <Button
         android:id="@+id/fragment_search_github_repos_empty_list_button"
