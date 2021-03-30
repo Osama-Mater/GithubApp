@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/item_search_github_repos_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorGray"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_search_github_repos_image_profile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Repository Name " />
+
+        <ImageView
+            android:id="@+id/item_search_github_repos_image_profile"
+            android:layout_width="@dimen/avatar"
+            android:layout_height="@dimen/avatar"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/item_search_github_repositories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorGray"
+            app:layout_constraintStart_toEndOf="@+id/item_search_github_repos_image_profile"
+            app:layout_constraintTop_toBottomOf="@+id/item_search_github_repos_title"
+            tools:text="repository description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
