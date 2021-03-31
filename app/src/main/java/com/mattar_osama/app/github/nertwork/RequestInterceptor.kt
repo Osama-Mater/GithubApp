@@ -9,8 +9,6 @@ internal class RequestInterceptor : Interceptor {
         val originalRequest = chain.request()
         val originalUrl = originalRequest.url
         val url = originalUrl.newBuilder()
-            .addQueryParameter("client_id", BuildConfig.GithubClientId)
-            .addQueryParameter("client_secret", BuildConfig.GITHUB_AUTHORIZATION_API_KEY)
             .build()
 
         val requestBuilder = originalRequest.newBuilder().url(url)

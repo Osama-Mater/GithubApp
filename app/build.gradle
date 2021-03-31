@@ -3,10 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-def keysPropertiesFile = rootProject.file("keys.properties")
-def keysProperties = new Properties()
-keysProperties.load(new FileInputStream(keysPropertiesFile))
-
 android {
     compileSdkVersion 30
     defaultConfig {
@@ -20,15 +16,11 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField 'String', "GITHUB_AUTHORIZATION_API_KEY", keysProperties['GITHUB_AUTHORIZATION_API_KEY']
-            buildConfigField 'String', "GithubClientId", keysProperties['GithubClientId']
         }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField 'String', "GITHUB_AUTHORIZATION_API_KEY", keysProperties['GITHUB_AUTHORIZATION_API_KEY']
-            buildConfigField 'String', "GithubClientId", keysProperties['GithubClientId']
         }
     }
     sourceSets {
