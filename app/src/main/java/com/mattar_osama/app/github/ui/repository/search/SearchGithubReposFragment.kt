@@ -17,8 +17,7 @@ import com.mattar_osama.app.github.extensions.onQueryTextChange
 import com.mattar_osama.app.github.ui.repository.search.views.SearchGithubReposAdapter
 import com.mattar_osama.app.github.utils.convertFilterToIndex
 import com.mattar_osama.app.github.utils.convertIndexToFilter
-import kotlinx.android.synthetic.main.fragment_search_github_repos.*
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * A simple [Fragment] subclass.
