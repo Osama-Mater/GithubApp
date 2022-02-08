@@ -72,3 +72,5 @@ fastlane/readme.md
 .idea/runConfigurations.xml
 .idea/vcs.xml
 keys.properties
+.DS_Store
+.idea
