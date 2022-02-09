@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
@@ -16,7 +17,6 @@ import com.mattar_osama.app.github.extensions.onQueryTextChange
 import com.mattar_osama.app.github.ui.repository.search.views.SearchGithubReposAdapter
 import com.mattar_osama.app.github.utils.convertFilterToIndex
 import com.mattar_osama.app.github.utils.convertIndexToFilter
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -25,7 +25,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SearchGithubReposFragment : BaseFragment(), SearchGithubReposAdapter.OnClickListener {
 
     // FOR DATA ---
-    private val viewModel: SearchGithubReposViewModel by viewModel()
+    private val viewModel by viewModels<SearchGithubReposViewModel>()
     private lateinit var adapter: SearchGithubReposAdapter
 
     private var _binding: FragmentSearchGithubReposBinding? = null

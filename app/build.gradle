@@ -56,6 +56,9 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$app_compat_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
     implementation "com.google.android.material:material:$android_material_version"
+
+    implementation 'androidx.fragment:fragment-ktx:1.4.1'
+
     // NETWORK
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_coroutines_adapter_version"
@@ -65,13 +68,10 @@ dependencies {
     implementation "androidx.paging:paging-runtime:$pagination_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
-    // KOIN
-    implementation "io.insert-koin:koin-android:$koin_version"
     // MATERIAL DIALOG
     implementation "com.afollestad.material-dialogs:core:$material_dialog_version"
     // UNIT TESTING
-    testImplementation 'junit:junit:4.12'
-    testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
+    testImplementation 'junit:junit:4.13.2'
     testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
     testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
     // INSTRUMENTATION TESTING
@@ -80,6 +80,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
     androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
-    androidTestImplementation "io.insert-koin:koin-test:$koin_version"
     androidTestImplementation "android.arch.core:core-testing:1.1.1"
 }

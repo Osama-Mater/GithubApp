@@ -3,10 +3,8 @@ package com.mattar_osama.app.github.base
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
-import org.koin.core.context.stopKoin
-import org.koin.test.KoinTest
 
-abstract class BaseTest : KoinTest {
+abstract class BaseTest  {
 
     // FOR DATA ---
     protected lateinit var mockServer: MockWebServer
@@ -19,7 +17,6 @@ abstract class BaseTest : KoinTest {
     @After
     open fun tearDown() {
         stopMockServer()
-        stopKoin()
     }
 
     // MOCK SERVER ---

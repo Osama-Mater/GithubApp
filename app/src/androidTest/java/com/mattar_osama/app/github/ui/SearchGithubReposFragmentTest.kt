@@ -13,15 +13,12 @@ import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import com.mattar_osama.app.github.R
 import com.mattar_osama.app.github.base.BaseIT
-import com.mattar_osama.app.github.di.configureAppComponent
-import com.mattar_osama.app.github.di.storageModuleTest
 import com.mattar_osama.app.github.ui.repository.search.SearchGithubReposFragment
 import com.mattar_osama.app.github.utils.hasItemCount
 import com.mattar_osama.app.github.utils.waitForAdapterChangeWithPagination
 import org.hamcrest.CoreMatchers.*
 import org.junit.*
 import org.junit.runner.RunWith
-import org.koin.core.context.loadKoinModules
 import java.net.HttpURLConnection
 
 
@@ -122,8 +119,6 @@ class SearchGithubReposFragmentTest : BaseIT() {
      * Configure custom [Module] for each [Test]
      */
     private fun configureCustomDependencies() {
-        loadKoinModules(
-            configureAppComponent(getMockUrl()).toMutableList().apply { add(storageModuleTest) })
     }
 
     /**
