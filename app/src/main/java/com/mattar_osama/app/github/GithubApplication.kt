@@ -1,7 +1,7 @@
 package com.mattar_osama.app.github
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-open class GithubApplication : Application() {
-
-}
+@HiltAndroidApp
+class GithubApplication : Application()

@@ -3,6 +3,7 @@ plugins{
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
+    id 'dagger.hilt.android.plugin'
 }
 
 def keysPropertiesFile = rootProject.file("keys.properties")
@@ -56,8 +57,11 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$app_compat_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
     implementation "com.google.android.material:material:$android_material_version"
-
     implementation 'androidx.fragment:fragment-ktx:1.4.1'
+
+    //Hilt
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    kapt "com.google.dagger:hilt-compiler:2.38.1"
 
     // NETWORK
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
