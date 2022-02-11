@@ -23,15 +23,15 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField 'String', "GITHUB_AUTHORIZATION_API_KEY", keysProperties['GITHUB_AUTHORIZATION_API_KEY']
-            buildConfigField 'String', "GithubClientId", keysProperties['GithubClientId']
+            buildConfigField 'String', "GITHUB_USER_NAME", keysProperties['GITHUB_USER_NAME']
+            buildConfigField 'String', "GITHUB_TOKEN", keysProperties['GITHUB_TOKEN']
         }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField 'String', "GITHUB_AUTHORIZATION_API_KEY", keysProperties['GITHUB_AUTHORIZATION_API_KEY']
-            buildConfigField 'String', "GithubClientId", keysProperties['GithubClientId']
+            buildConfigField 'String', "GITHUB_USER_NAME", keysProperties['GITHUB_USER_NAME']
+            buildConfigField 'String', "GITHUB_TOKEN", keysProperties['GITHUB_TOKEN']
         }
     }
     sourceSets {
