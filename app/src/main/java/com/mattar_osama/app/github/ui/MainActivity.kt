@@ -6,7 +6,9 @@ import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import com.mattar_osama.app.github.R
 import com.mattar_osama.app.github.ui.repository.search.SearchGithubReposFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     // OVERRIDE ---

@@ -17,11 +17,13 @@ import com.mattar_osama.app.github.extensions.onQueryTextChange
 import com.mattar_osama.app.github.ui.repository.search.views.SearchGithubReposAdapter
 import com.mattar_osama.app.github.utils.convertFilterToIndex
 import com.mattar_osama.app.github.utils.convertIndexToFilter
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A simple [Fragment] subclass.
  *
  */
+@AndroidEntryPoint
 class SearchGithubReposFragment : BaseFragment(), SearchGithubReposAdapter.OnClickListener {
 
     // FOR DATA ---
