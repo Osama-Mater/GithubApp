@@ -1,8 +1,8 @@
-package com.mattar_osama.app.github.data.model.githubusers
+package com.mattar_osama.app.github.data.dto.githubusersdto
 
 import com.google.gson.annotations.SerializedName
 
-data class UserProfile(
+data class UserProfileDto(
     @SerializedName("avatar_url")
     val avatarUrl: String,
     @SerializedName("events_url")

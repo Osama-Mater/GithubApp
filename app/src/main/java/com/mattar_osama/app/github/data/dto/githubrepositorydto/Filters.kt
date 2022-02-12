@@ -1,11 +1,11 @@
-package com.mattar_osama.app.github.data.model.githubrepository
+package com.mattar_osama.app.github.data.dto.githubrepositorydto
 
-import com.mattar_osama.app.github.data.api.GithubReposService
+import com.mattar_osama.app.github.data.api.GithubApiService
 
 object Filters {
 
     /**
-     * Filters used by [GithubReposService]
+     * Filters used by [GithubApiService]
      * to sort "search" queries
      */
     enum class ResultSearchRepositories(val value: String) {

@@ -23,7 +23,7 @@
 
 #Force obsucation on main package
 -keep class !com.mattar_osama.app.github.** { *; }
--keep class com.mattar_osama.app.github.data.model.** { *; }
+-keep class com.mattar_osama.app.github.data.dto.** { *; }
 
 #GSON CONF
 -keepattributes Signature

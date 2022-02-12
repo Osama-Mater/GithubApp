@@ -1,8 +1,8 @@
-package com.mattar_osama.app.github.data.model.githubrepository
+package com.mattar_osama.app.github.data.dto.githubrepositorydto
 
 import com.google.gson.annotations.SerializedName
 
-data class ProjectModel(
+data class ProjectDto(
     @SerializedName("id")
     val id: String,
     @SerializedName("name")
@@ -13,5 +13,5 @@ data class ProjectModel(
     @SerializedName("description")
     val description: String,
     @SerializedName("owner")
-    val owner: OwnerModel
+    val owner: OwnerDto
 )

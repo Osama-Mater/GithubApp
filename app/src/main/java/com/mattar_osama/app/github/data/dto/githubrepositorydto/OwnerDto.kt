@@ -1,9 +1,9 @@
-package com.mattar_osama.app.github.data.model.githubrepository
+package com.mattar_osama.app.github.data.dto.githubrepositorydto
 
 import com.google.gson.annotations.SerializedName
 
 
-data class OwnerModel(
+data class OwnerDto(
     val login: String,
     @SerializedName("avatar_url")
     val avatarUrl: String

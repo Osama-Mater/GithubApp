@@ -1,8 +1,8 @@
-package com.mattar_osama.app.github.data.model.userprofile
+package com.mattar_osama.app.github.data.dto.userprofiledto
 
-data class GitHubUserProfile(
+data class GitHubUserProfileDto(
     val avatar_url: String,
-    val bio: Any,
+    val bio: String?,
     val blog: String,
     val company: String,
     val created_at: String,
