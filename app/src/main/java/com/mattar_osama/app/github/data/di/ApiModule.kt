@@ -1,10 +1,9 @@
-package com.mattar_osama.app.github.di
+package com.mattar_osama.app.github.data.di
 
 import com.mattar_osama.app.github.data.api.GithubApiService
 import com.mattar_osama.app.github.data.datasource.GithubDataSource
 import com.mattar_osama.app.github.data.datasource.mapper.*
 import com.mattar_osama.app.github.data.datasource.remote.GithubRemoteDataSourceImpl
-import com.mattar_osama.app.github.data.repository.GithubReposRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,11 +14,6 @@ import retrofit2.Retrofit
 @Module
 @InstallIn(SingletonComponent::class)
 object ApiModule {
-
-    @Provides
-    fun provideGithubReposRepository(service: GithubApiService): GithubReposRepository {
-        return GithubReposRepository(service)
-    }
 
     @Provides
     fun provideGithubRemoteDataSource(

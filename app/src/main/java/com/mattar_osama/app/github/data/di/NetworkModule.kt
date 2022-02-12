@@ -1,4 +1,4 @@
-package com.mattar_osama.app.github.di
+package com.mattar_osama.app.github.data.di
 
 import android.content.Context
 import android.net.ConnectivityManager
