@@ -5,25 +5,28 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations.switchMap
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.mattar_osama.app.github.data.api.NetworkState
 import com.mattar_osama.app.github.base.BaseViewModel
+import com.mattar_osama.app.github.data.api.NetworkState
 import com.mattar_osama.app.github.data.dto.githubrepositorydto.Filters
 import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
+import com.mattar_osama.app.github.domain.usecase.SearchGithubRepositories
 import com.mattar_osama.app.github.pagination.datasource.GithubReposDataSourceFactory
-import com.mattar_osama.app.github.data.repository.GithubRepositoryImpl
 import com.mattar_osama.app.github.storage.SharedPrefsManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class SearchGithubReposViewModel @Inject constructor(
-    private val repository: GithubRepositoryImpl,
+    searchGithubRepositories: SearchGithubRepositories,
     private val sharedPrefsManager: SharedPrefsManager
 ) : BaseViewModel() {
 
     // FOR DATA ---
     private val githubReposDataSource =
-        GithubReposDataSourceFactory(repository = repository, scope = ioScope)
+        GithubReposDataSourceFactory(
+            searchGithubRepositories = searchGithubRepositories,
+            scope = ioScope
+        )
 
     // OBSERVABLES ---
     val githubRepos = LivePagedListBuilder(githubReposDataSource, pagedListConfig()).build()

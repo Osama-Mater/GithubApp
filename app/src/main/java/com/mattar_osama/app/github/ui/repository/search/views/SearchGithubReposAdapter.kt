@@ -2,15 +2,15 @@ package com.mattar_osama.app.github.ui.repository.search.views
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagedListAdapter
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mattar_osama.app.github.R
 import com.mattar_osama.app.github.data.api.NetworkState
-import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
+import com.mattar_osama.app.github.domain.model.ProjectDomainModel
 
 class SearchGithubReposAdapter(private val callback: OnClickListener) :
-    PagedListAdapter<ProjectDto, RecyclerView.ViewHolder>(
+    PagingDataAdapter<ProjectDomainModel, RecyclerView.ViewHolder>(
         diffCallback
     ) {
 
@@ -38,7 +38,9 @@ class SearchGithubReposAdapter(private val callback: OnClickListener) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (getItemViewType(position)) {
-            R.layout.item_search_github_repos -> (holder as SearchGithubReposViewHolder).bindTo(getItem(position))
+            R.layout.item_search_github_repos -> (holder as SearchGithubReposViewHolder).bindTo(
+                getItem(position)
+            )
             R.layout.item_search_github_repos_network_state -> (holder as SearchGithubReposNetworkStateViewHolder).bindTo(
                 networkState,
                 callback
@@ -80,11 +82,17 @@ class SearchGithubReposAdapter(private val callback: OnClickListener) :
     }
 
     companion object {
-        private val diffCallback = object : DiffUtil.ItemCallback<ProjectDto>() {
-            override fun areItemsTheSame(oldItem: ProjectDto, newItem: ProjectDto): Boolean =
+        private val diffCallback = object : DiffUtil.ItemCallback<ProjectDomainModel>() {
+            override fun areItemsTheSame(
+                oldItem: ProjectDomainModel,
+                newItem: ProjectDomainModel
+            ): Boolean =
                 oldItem == newItem
 
-            override fun areContentsTheSame(oldItem: ProjectDto, newItem: ProjectDto): Boolean =
+            override fun areContentsTheSame(
+                oldItem: ProjectDomainModel,
+                newItem: ProjectDomainModel
+            ): Boolean =
                 oldItem == newItem
         }
     }

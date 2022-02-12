@@ -5,16 +5,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import com.mattar_osama.app.github.data.api.NetworkState
-import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
-import com.mattar_osama.app.github.data.repository.GithubRepositoryImpl
+import com.mattar_osama.app.github.domain.model.ProjectDomainModel
+import com.mattar_osama.app.github.domain.usecase.SearchGithubRepositories
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.collect
 
 class GithubReposDataSource(
-    private val repository: GithubRepositoryImpl,
+    private val searchGithubRepositories: SearchGithubRepositories,
     private val query: String,
     private val sort: String,
     private val scope: CoroutineScope
-) : PageKeyedDataSource<Int, ProjectDto>() {
+) : PageKeyedDataSource<Int, ProjectDomainModel>() {
 
     // FOR DATA ---
     private var supervisorJob = SupervisorJob()
@@ -25,7 +26,7 @@ class GithubReposDataSource(
     // OVERRIDE ---
     override fun loadInitial(
         params: LoadInitialParams<Int>,
-        callback: LoadInitialCallback<Int, ProjectDto>
+        callback: LoadInitialCallback<Int, ProjectDomainModel>
     ) {
         retryQuery = { loadInitial(params, callback) }
         executeQuery(1, params.requestedLoadSize) {
@@ -33,7 +34,10 @@ class GithubReposDataSource(
         }
     }
 
-    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, ProjectDto>) {
+    override fun loadAfter(
+        params: LoadParams<Int>,
+        callback: LoadCallback<Int, ProjectDomainModel>
+    ) {
         val page = params.key
         retryQuery = { loadAfter(params, callback) }
         executeQuery(page, params.requestedLoadSize) {
@@ -41,18 +45,28 @@ class GithubReposDataSource(
         }
     }
 
-    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, ProjectDto>) {}
+    override fun loadBefore(
+        params: LoadParams<Int>,
+        callback: LoadCallback<Int, ProjectDomainModel>
+    ) {
+    }
 
     // UTILS ---
-    private fun executeQuery(page: Int, perPage: Int, callback: (List<ProjectDto>) -> Unit) {
+    private fun executeQuery(
+        page: Int,
+        perPage: Int,
+        callback: (List<ProjectDomainModel>) -> Unit
+    ) {
         networkState.postValue(NetworkState.RUNNING)
         scope.launch(getJobErrorHandler() + supervisorJob) {
             delay(200) // To handle user typing case
             val githubRepository =
-                repository.searchGithubReposWithPagination(query, page, perPage, sort)
+                searchGithubRepositories.execute(query, page, sort)
             retryQuery = null
             networkState.postValue(NetworkState.SUCCESS)
-            callback(githubRepository)
+            githubRepository.collect {
+                callback(it)
+            }
         }
     }
 
