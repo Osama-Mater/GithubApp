@@ -1,8 +1,6 @@
 package com.mattar_osama.app.github.data.repository
 
-import com.mattar_osama.app.github.data.api.GithubApiService
 import com.mattar_osama.app.github.data.datasource.GithubDataSource
-import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
 import com.mattar_osama.app.github.data.repository.mapper.ProjectsRepositoryToDomainModelMapper
 import com.mattar_osama.app.github.data.repository.mapper.UserDetailsRepositoryToDomainModelMapper
 import com.mattar_osama.app.github.data.repository.mapper.UsersRepositoryToDomainModelMapper
@@ -16,28 +14,11 @@ import kotlinx.coroutines.supervisorScope
 import javax.inject.Inject
 
 class GithubRepositoryImpl @Inject constructor(
-    private val service: GithubApiService,
     private val githubRemoteDataSource: GithubDataSource,
     private val projectDomainMapper: ProjectsRepositoryToDomainModelMapper,
     private val usersDomainMapper: UsersRepositoryToDomainModelMapper,
     private val userDetailsDomainMapper: UserDetailsRepositoryToDomainModelMapper
-) :
-    GithubRepository {
-
-    private suspend fun search(query: String, page: Int, perPage: Int, sort: String) =
-        service.search(query, page, perPage, sort).await()
-
-    suspend fun searchGithubReposWithPagination(
-        query: String,
-        page: Int,
-        perPage: Int,
-        sort: String
-    ): List<ProjectDto> {
-        if (query.isEmpty()) return listOf()
-
-        val request = search(query, page, perPage, sort) // Search by name
-        return request.items
-    }
+) : GithubRepository {
 
     override suspend fun searchRepositories(
         query: String,
