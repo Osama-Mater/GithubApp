@@ -2,7 +2,7 @@ package com.mattar_osama.app.github.storage
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.mattar_osama.app.github.data.model.githubrepository.Filters
+import com.mattar_osama.app.github.data.dto.githubrepositorydto.Filters
 import com.mattar_osama.app.github.extensions.setValue
 import javax.inject.Inject
 

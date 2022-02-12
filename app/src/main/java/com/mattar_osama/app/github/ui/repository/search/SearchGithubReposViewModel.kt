@@ -7,8 +7,8 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.mattar_osama.app.github.data.api.NetworkState
 import com.mattar_osama.app.github.base.BaseViewModel
-import com.mattar_osama.app.github.data.model.githubrepository.Filters
-import com.mattar_osama.app.github.data.model.githubrepository.ProjectModel
+import com.mattar_osama.app.github.data.dto.githubrepositorydto.Filters
+import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
 import com.mattar_osama.app.github.pagination.datasource.GithubReposDataSourceFactory
 import com.mattar_osama.app.github.data.repository.GithubReposRepository
 import com.mattar_osama.app.github.storage.SharedPrefsManager
@@ -33,7 +33,7 @@ class SearchGithubReposViewModel @Inject constructor(
     // PUBLIC API ---
 
     /**
-     * Fetch a list of [ProjectModel] by name
+     * Fetch a list of [ProjectDto] by name
      * Called each time an user hits a key through [SearchView].
      */
     fun fetchReposByName(query: String) {

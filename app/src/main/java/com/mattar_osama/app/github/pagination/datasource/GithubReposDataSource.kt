@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import com.mattar_osama.app.github.data.api.NetworkState
-import com.mattar_osama.app.github.data.model.githubrepository.ProjectModel
+import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
 import com.mattar_osama.app.github.data.repository.GithubReposRepository
 import kotlinx.coroutines.*
 
@@ -14,7 +14,7 @@ class GithubReposDataSource(
     private val query: String,
     private val sort: String,
     private val scope: CoroutineScope
-) : PageKeyedDataSource<Int, ProjectModel>() {
+) : PageKeyedDataSource<Int, ProjectDto>() {
 
     // FOR DATA ---
     private var supervisorJob = SupervisorJob()
@@ -25,7 +25,7 @@ class GithubReposDataSource(
     // OVERRIDE ---
     override fun loadInitial(
         params: LoadInitialParams<Int>,
-        callback: LoadInitialCallback<Int, ProjectModel>
+        callback: LoadInitialCallback<Int, ProjectDto>
     ) {
         retryQuery = { loadInitial(params, callback) }
         executeQuery(1, params.requestedLoadSize) {
@@ -33,7 +33,7 @@ class GithubReposDataSource(
         }
     }
 
-    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, ProjectModel>) {
+    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, ProjectDto>) {
         val page = params.key
         retryQuery = { loadAfter(params, callback) }
         executeQuery(page, params.requestedLoadSize) {
@@ -41,10 +41,10 @@ class GithubReposDataSource(
         }
     }
 
-    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, ProjectModel>) {}
+    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, ProjectDto>) {}
 
     // UTILS ---
-    private fun executeQuery(page: Int, perPage: Int, callback: (List<ProjectModel>) -> Unit) {
+    private fun executeQuery(page: Int, perPage: Int, callback: (List<ProjectDto>) -> Unit) {
         networkState.postValue(NetworkState.RUNNING)
         scope.launch(getJobErrorHandler() + supervisorJob) {
             delay(200) // To handle user typing case

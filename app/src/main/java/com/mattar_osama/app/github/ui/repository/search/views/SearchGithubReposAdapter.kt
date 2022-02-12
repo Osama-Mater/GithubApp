@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mattar_osama.app.github.R
 import com.mattar_osama.app.github.data.api.NetworkState
-import com.mattar_osama.app.github.data.model.githubrepository.ProjectModel
+import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
 
 class SearchGithubReposAdapter(private val callback: OnClickListener) :
-    PagedListAdapter<ProjectModel, RecyclerView.ViewHolder>(
+    PagedListAdapter<ProjectDto, RecyclerView.ViewHolder>(
         diffCallback
     ) {
 
@@ -80,11 +80,11 @@ class SearchGithubReposAdapter(private val callback: OnClickListener) :
     }
 
     companion object {
-        private val diffCallback = object : DiffUtil.ItemCallback<ProjectModel>() {
-            override fun areItemsTheSame(oldItem: ProjectModel, newItem: ProjectModel): Boolean =
+        private val diffCallback = object : DiffUtil.ItemCallback<ProjectDto>() {
+            override fun areItemsTheSame(oldItem: ProjectDto, newItem: ProjectDto): Boolean =
                 oldItem == newItem
 
-            override fun areContentsTheSame(oldItem: ProjectModel, newItem: ProjectModel): Boolean =
+            override fun areContentsTheSame(oldItem: ProjectDto, newItem: ProjectDto): Boolean =
                 oldItem == newItem
         }
     }

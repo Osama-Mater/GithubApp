@@ -1,10 +1,10 @@
 package com.mattar_osama.app.github.data.repository
 
-import com.mattar_osama.app.github.data.api.GithubReposService
-import com.mattar_osama.app.github.data.model.githubrepository.ProjectModel
+import com.mattar_osama.app.github.data.api.GithubApiService
+import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
 import javax.inject.Inject
 
-class GithubReposRepository @Inject constructor(private val service: GithubReposService) {
+class GithubReposRepository @Inject constructor(private val service: GithubApiService) {
 
     private suspend fun search(query: String, page: Int, perPage: Int, sort: String) =
         service.search(query, page, perPage, sort).await()
@@ -14,7 +14,7 @@ class GithubReposRepository @Inject constructor(private val service: GithubRepos
         page: Int,
         perPage: Int,
         sort: String
-    ): List<ProjectModel> {
+    ): List<ProjectDto> {
         if (query.isEmpty()) return listOf()
 
         val request = search(query, page, perPage, sort) // Search by name
