@@ -10,14 +10,14 @@ import com.mattar_osama.app.github.base.BaseViewModel
 import com.mattar_osama.app.github.data.dto.githubrepositorydto.Filters
 import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
 import com.mattar_osama.app.github.pagination.datasource.GithubReposDataSourceFactory
-import com.mattar_osama.app.github.data.repository.GithubReposRepository
+import com.mattar_osama.app.github.data.repository.GithubRepositoryImpl
 import com.mattar_osama.app.github.storage.SharedPrefsManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class SearchGithubReposViewModel @Inject constructor(
-    private val repository: GithubReposRepository,
+    private val repository: GithubRepositoryImpl,
     private val sharedPrefsManager: SharedPrefsManager
 ) : BaseViewModel() {
 

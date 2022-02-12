@@ -6,11 +6,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import com.mattar_osama.app.github.data.api.NetworkState
 import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
-import com.mattar_osama.app.github.data.repository.GithubReposRepository
+import com.mattar_osama.app.github.data.repository.GithubRepositoryImpl
 import kotlinx.coroutines.*
 
 class GithubReposDataSource(
-    private val repository: GithubReposRepository,
+    private val repository: GithubRepositoryImpl,
     private val query: String,
     private val sort: String,
     private val scope: CoroutineScope

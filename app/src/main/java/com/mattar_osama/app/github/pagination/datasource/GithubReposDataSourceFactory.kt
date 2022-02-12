@@ -3,11 +3,11 @@ package com.mattar_osama.app.github.pagination.datasource
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
 import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectDto
-import com.mattar_osama.app.github.data.repository.GithubReposRepository
+import com.mattar_osama.app.github.data.repository.GithubRepositoryImpl
 import kotlinx.coroutines.CoroutineScope
 
 class GithubReposDataSourceFactory(
-    private val repository: GithubReposRepository,
+    private val repository: GithubRepositoryImpl,
     private var query: String = "",
     private var sort: String = "",
     private val scope: CoroutineScope
