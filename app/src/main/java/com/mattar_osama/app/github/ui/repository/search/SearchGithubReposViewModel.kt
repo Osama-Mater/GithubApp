@@ -5,12 +5,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations.switchMap
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.mattar_osama.app.github.api.NetworkState
+import com.mattar_osama.app.github.data.api.NetworkState
 import com.mattar_osama.app.github.base.BaseViewModel
-import com.mattar_osama.app.github.model.Filters
-import com.mattar_osama.app.github.model.ProjectModel
+import com.mattar_osama.app.github.data.model.githubrepository.Filters
+import com.mattar_osama.app.github.data.model.githubrepository.ProjectModel
 import com.mattar_osama.app.github.pagination.datasource.GithubReposDataSourceFactory
-import com.mattar_osama.app.github.repository.GithubReposRepository
+import com.mattar_osama.app.github.data.repository.GithubReposRepository
 import com.mattar_osama.app.github.storage.SharedPrefsManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

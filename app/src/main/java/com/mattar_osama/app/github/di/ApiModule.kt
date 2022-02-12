@@ -1,7 +1,7 @@
 package com.mattar_osama.app.github.di
 
-import com.mattar_osama.app.github.api.GithubReposService
-import com.mattar_osama.app.github.repository.GithubReposRepository
+import com.mattar_osama.app.github.data.api.GithubReposService
+import com.mattar_osama.app.github.data.repository.GithubReposRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

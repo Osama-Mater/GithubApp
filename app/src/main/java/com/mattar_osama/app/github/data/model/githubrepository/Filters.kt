@@ -1,6 +1,6 @@
-package com.mattar_osama.app.github.model
+package com.mattar_osama.app.github.data.model.githubrepository
 
-import com.mattar_osama.app.github.api.GithubReposService
+import com.mattar_osama.app.github.data.api.GithubReposService
 
 object Filters {
 

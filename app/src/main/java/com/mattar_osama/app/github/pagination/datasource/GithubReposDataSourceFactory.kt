@@ -2,8 +2,8 @@ package com.mattar_osama.app.github.pagination.datasource
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
-import com.mattar_osama.app.github.model.ProjectModel
-import com.mattar_osama.app.github.repository.GithubReposRepository
+import com.mattar_osama.app.github.data.model.githubrepository.ProjectModel
+import com.mattar_osama.app.github.data.repository.GithubReposRepository
 import kotlinx.coroutines.CoroutineScope
 
 class GithubReposDataSourceFactory(

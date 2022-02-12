@@ -1,4 +1,4 @@
-package com.mattar_osama.app.github.model
+package com.mattar_osama.app.github.data.model.githubrepository
 
 import com.google.gson.annotations.SerializedName
 

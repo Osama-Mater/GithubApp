@@ -6,8 +6,8 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mattar_osama.app.github.R
-import com.mattar_osama.app.github.api.NetworkState
-import com.mattar_osama.app.github.model.ProjectModel
+import com.mattar_osama.app.github.data.api.NetworkState
+import com.mattar_osama.app.github.data.model.githubrepository.ProjectModel
 
 class SearchGithubReposAdapter(private val callback: OnClickListener) :
     PagedListAdapter<ProjectModel, RecyclerView.ViewHolder>(

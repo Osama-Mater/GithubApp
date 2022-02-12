@@ -1,4 +1,4 @@
-package com.mattar_osama.app.github.api
+package com.mattar_osama.app.github.data.api
 
 /**
  * Used to notify a client

@@ -4,9 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
-import com.mattar_osama.app.github.api.NetworkState
-import com.mattar_osama.app.github.model.ProjectModel
-import com.mattar_osama.app.github.repository.GithubReposRepository
+import com.mattar_osama.app.github.data.api.NetworkState
+import com.mattar_osama.app.github.data.model.githubrepository.ProjectModel
+import com.mattar_osama.app.github.data.repository.GithubReposRepository
 import kotlinx.coroutines.*
 
 class GithubReposDataSource(

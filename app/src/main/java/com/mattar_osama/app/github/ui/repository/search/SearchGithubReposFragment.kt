@@ -10,7 +10,7 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
 import com.bumptech.glide.Glide
 import com.mattar_osama.app.github.R
-import com.mattar_osama.app.github.api.NetworkState
+import com.mattar_osama.app.github.data.api.NetworkState
 import com.mattar_osama.app.github.base.BaseFragment
 import com.mattar_osama.app.github.databinding.FragmentSearchGithubReposBinding
 import com.mattar_osama.app.github.extensions.onQueryTextChange

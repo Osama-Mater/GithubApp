@@ -2,7 +2,7 @@ package com.mattar_osama.app.github.ui.repository.search.views
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.mattar_osama.app.github.api.NetworkState
+import com.mattar_osama.app.github.data.api.NetworkState
 import kotlinx.android.synthetic.main.item_search_github_repos_network_state.view.item_search_github_repos_network_state_button as retryButton
 import kotlinx.android.synthetic.main.item_search_github_repos_network_state.view.item_search_github_repos_network_state_progress_bar as progressBar
 import kotlinx.android.synthetic.main.item_search_github_repos_network_state.view.item_search_github_repos_network_state_title as retryTitle

@@ -2,10 +2,11 @@ package com.mattar_osama.app.github.storage
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.mattar_osama.app.github.data.model.githubrepository.Filters
 import com.mattar_osama.app.github.extensions.setValue
-import com.mattar_osama.app.github.model.Filters
+import javax.inject.Inject
 
-class SharedPrefsManager(private val context: Context) {
+class SharedPrefsManager @Inject constructor(private val context: Context) {
 
     private fun get(): SharedPreferences =
         context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE)

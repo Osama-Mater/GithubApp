@@ -1,6 +1,6 @@
 package com.mattar_osama.app.github.utils
 
-import com.mattar_osama.app.github.model.Filters
+import com.mattar_osama.app.github.data.model.githubrepository.Filters
 
 fun convertFilterToIndex(filter: Filters.ResultSearchRepositories) = when (filter) {
     Filters.ResultSearchRepositories.BY_UPDATED -> 2
