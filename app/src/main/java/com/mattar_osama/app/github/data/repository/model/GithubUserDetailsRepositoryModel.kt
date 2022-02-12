@@ -1,4 +1,4 @@
-package com.mattar_osama.app.github.data.datasource.model
+package com.mattar_osama.app.github.data.repository.model
 
 data class GithubUserDetailsRepositoryModel(
     val avatarUrl: String,

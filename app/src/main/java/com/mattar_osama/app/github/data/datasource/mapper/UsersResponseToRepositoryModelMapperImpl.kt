@@ -1,7 +1,7 @@
 package com.mattar_osama.app.github.data.datasource.mapper
 
 import com.mattar_osama.app.github.data.dto.githubusersdto.UserSearchResponseDto
-import com.mattar_osama.app.github.data.datasource.model.GithubUserRepositoryModel
+import com.mattar_osama.app.github.data.repository.model.GithubUserRepositoryModel
 import javax.inject.Inject
 
 interface UsersResponseToRepositoryModelMapper {

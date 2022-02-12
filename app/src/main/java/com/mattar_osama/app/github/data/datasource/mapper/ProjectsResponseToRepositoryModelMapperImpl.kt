@@ -1,7 +1,7 @@
 package com.mattar_osama.app.github.data.datasource.mapper
 
 import com.mattar_osama.app.github.data.dto.githubrepositorydto.ProjectsResponseDto
-import com.mattar_osama.app.github.data.datasource.model.ProjectRepositoryModel
+import com.mattar_osama.app.github.data.repository.model.ProjectRepositoryModel
 import javax.inject.Inject
 
 interface ProjectsResponseToRepositoryModelMapper {

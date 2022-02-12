@@ -5,9 +5,9 @@ import com.mattar_osama.app.github.data.datasource.GithubDataSource
 import com.mattar_osama.app.github.data.datasource.mapper.ProjectsResponseToRepositoryModelMapper
 import com.mattar_osama.app.github.data.datasource.mapper.UserDetailsResponseToRepositoryModelMapper
 import com.mattar_osama.app.github.data.datasource.mapper.UsersResponseToRepositoryModelMapper
-import com.mattar_osama.app.github.data.datasource.model.GithubUserDetailsRepositoryModel
-import com.mattar_osama.app.github.data.datasource.model.GithubUserRepositoryModel
-import com.mattar_osama.app.github.data.datasource.model.ProjectRepositoryModel
+import com.mattar_osama.app.github.data.repository.model.GithubUserDetailsRepositoryModel
+import com.mattar_osama.app.github.data.repository.model.GithubUserRepositoryModel
+import com.mattar_osama.app.github.data.repository.model.ProjectRepositoryModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow

@@ -1,8 +1,8 @@
 package com.mattar_osama.app.github.data.datasource
 
-import com.mattar_osama.app.github.data.datasource.model.GithubUserDetailsRepositoryModel
-import com.mattar_osama.app.github.data.datasource.model.GithubUserRepositoryModel
-import com.mattar_osama.app.github.data.datasource.model.ProjectRepositoryModel
+import com.mattar_osama.app.github.data.repository.model.GithubUserDetailsRepositoryModel
+import com.mattar_osama.app.github.data.repository.model.GithubUserRepositoryModel
+import com.mattar_osama.app.github.data.repository.model.ProjectRepositoryModel
 import kotlinx.coroutines.flow.Flow
 
 interface GithubDataSource {
